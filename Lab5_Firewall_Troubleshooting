@@ -1,0 +1,24 @@
+Lab 5 – Firewall and Network Troubleshooting
+
+Objective: Configure firewall rules and test basic troubleshooting commands for network services.
+
+Checking Firewall Status
+sudo firewall-cmd --state
+sudo firewall-cmd --list-all
+
+Allowing Services Through the Firewall
+sudo firewall-cmd --add-service=dns --permanent
+sudo firewall-cmd --add-service=dhcp --permanent
+sudo firewall-cmd --add-service=ntp --permanent
+sudo firewall-cmd --reload
+
+Basic Troubleshooting Commands
+ping 192.168.56.1
+traceroute google.com
+dig classroom.local
+systemctl status named
+journalctl -xe
+
+In this lab I worked with `firewalld` to make sure essential services like DHCP, DNS and NTP are allowed through the server's firewall. I also used basic troubleshooting tools like `ping`, `dig`, and `systemctl status` to verify that the services were running correctly and reachable.
+
+
