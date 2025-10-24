@@ -19,14 +19,3 @@ The following settings were used throughout the labs:
 - DNS Resolver: 8.8.8.8  
 - Domain used for DNS configuration: classroom.local
 
-| Lab | File |
-|-----|------|
-| Network Configuration | `Lab1_Network_Config.md` |
-| DHCP Server Setup     | `Lab2_DHCP_Server_Setup.md` |
-| DNS (BIND) Setup      | `Lab3_DNS_Bind.md` |
-| NTP Service           | `Lab4_NTP_Service.md` |
-
-Each file contains the commands used and a short explanation of the configuration.
-
-
-
