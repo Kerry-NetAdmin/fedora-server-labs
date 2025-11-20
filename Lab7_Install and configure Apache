@@ -1,0 +1,54 @@
+The Objective of this lab was to Install and configure Apache HTTP Server, set up virtual hosts, and secure the web server with SSL/TLS certificates.
+
+1. Installing and Configuring Apache HTTP Server
+First I Updated the System
+sudo dnf update -y
+The update was successful
+
+2.Installing Apache
+sudo dnf install httpd -y
+
+3.Start and Enable Apache
+sudo systemctl start httpd
+sudo systemctl enable httpd
+This was a successs.
+
+4.Configuring Firewall
+sudo firewall-cmd --add-service=http --permanent
+sudo firewall-cmd --reload
+Firewall was enabled and actively running
+
+5. Verifying Installation
+Using http://localhost:8080 . The Apache default page was displayed succesfully
+
+6.Website Directory and Permissions
+sudo mkdir -p /var/www/html/mywebsite
+sudo chown -R apache:apache /var/www/html/mywebsite
+
+7.Test Configuration and Restart Apache
+sudo apachectl configtest
+sudo systemctl restart httpd
+
+8.Virtual Hosting and Site Configuration
+sudo mkdir -p /var/www/html/mywebsite1
+sudo mkdir -p /var/www/html/mywebsite2
+
+9.Creating Virtual Host Configurations
+<VirtualHost *:80>
+    ServerAdmin webmaster@mywebsite.com
+    DocumentRoot /var/www/html/mywebsite
+    ServerName mywebsite.com
+    ServerAlias www.mywebsite.com
+    ErrorLog /var/log/httpd/mywebsite-error.log
+    CustomLog /var/log/httpd/mycoolsite-access.log combined
+</VirtualHost>
+
+10.Setting the Permissions
+sudo chown -R apache:apache /var/www/html/mywebsite1
+sudo chown -R apache:apache /var/www/html/mywebsite2
+
+11.Testing Configuration and Restarting Apache
+sudo apachectl configtest
+sudo systemctl restart httpd
+This was a success
+
