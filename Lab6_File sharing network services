@@ -1,1 +1,3 @@
-Objective of this lab was to configure Samba nfs, and FTP services to provide file and printer sharing 
+Objective of this lab was to configure Samba nfs, and FTP services to provide file and printer sharing across the network
+
+1. Installing Samba
