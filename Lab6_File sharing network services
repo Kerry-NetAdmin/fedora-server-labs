@@ -1,11 +1,10 @@
-Objective of this lab was to configure Samba nfs, and FTP services to provide file and printer sharing across the network
+Objective of this lab was to configure Samba NFS, and FTP services to provide file and printer sharing across the network
 
-1. Installing Samba
+1. Installation of  Samba
 sudo dnf install samba -y
 
 2.Configuring the Firewall
 Allow Samba traffic
-
 sudo firewall-cmd --permanent --zone=public --add-service=samba
 sudo firewall-cmd --permanent --zone=public --add-port=139/tcp
 sudo firewall-cmd --permanent --zone=public --add-port=445/tcp
